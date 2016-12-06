@@ -1,0 +1,141 @@
+// ****************************
+
+// * For use with mobile optimization 
+
+// ****************************
+
+@mixin mobile {
+	@media only screen and (min-width:0px) and (max-width:825px){
+		@content;
+	}
+}
+
+// ****************************
+
+// * Calculates Rem font-size - relative to HTML font-size
+
+// Usage:
+
+//    p {
+//      @include font-size(14px)
+//    }
+
+// ****************************
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+
+// ****************************
+
+// * Setting Breakpoints
+
+// ****************************
+
+@mixin bp-large {
+  @media only screen and (max-width: 60em) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media only screen and (max-width: 40em) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media only screen and (max-width: 30em) {
+    @content;
+  }
+}
+
+// ****************************
+
+// * Animations
+
+// ****************************
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }  
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }  
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+// ****************************
+
+// * Transitions
+
+// ****************************
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// ****************************
+
+// * Clearfix placeholder for use with @extend
+
+// ****************************
+
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// ****************************
+
+// * Hide Text placeholder for use with @extend
+
+// ****************************
+
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+// ****************************
+
+// * Center placeholder in container
+
+// ****************************
+
+%centered{
+  margin:0 auto;
+  text-align:center;
+}

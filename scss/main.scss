@@ -1,0 +1,123 @@
+@import "compass/css3",
+"_mixins";
+
+html{
+	background-color:#0E3B43;
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	body{
+		width:100%;
+	}
+	header{
+		width:100%;
+		.header{
+			color:#CCC;
+			font-size:50px;
+			text-align:center;
+		}
+		.input{
+			margin:0 auto;
+			width:20%;
+			@include mobile{
+				width:80%;
+			}
+			&.hidden{
+				display:none;
+				height:0;
+			}
+			input.search-box{
+				border-radius:5px;
+				font-size:20px;
+				margin:0 auto 10px auto;
+				padding:10px;
+				width:100%;
+			}
+		}
+		.button-container{
+			display:flex;
+			justify-content:center;
+			margin:5px auto 15px auto;
+			button{
+				border-radius:5px;
+				font-size:30px;
+				margin:5px;
+				padding:10px;
+			}
+			a{
+				color:#CCC;
+				text-decoration:none;
+			}
+			#search{
+				background-color:#7F557D;
+				border:#7F557D;
+				&:hover{
+					background-color:#357266;
+					border:#357266;
+				}
+			}
+			#clear{
+				background-color:#CCC;
+				border-radius:5px;
+				&:hover{
+					background-color:#AAA;
+				}
+			}
+			#randomize{
+				background-color:#FE5F55;
+				border:#FE5F55;
+				&:hover{
+					background-color:#357266;
+					border:#357266;
+				}
+			}
+		}
+	}
+	.data{
+		display:flex;
+		flex-wrap:wrap;
+		justify-content:center;
+		margin:10px auto;
+		width:80%;
+		@include mobile{
+			width:90%;
+		}
+		h3{
+			color:#CCC;
+			display:block;
+			font-size:20px;
+			text-align:center;
+			width:100%;
+		}
+		.wiki-block{
+			background:rgba(250,250,250,.4);
+			border-radius:10px;
+			box-shadow:1px 3px 2px #000;
+			display:block;
+			margin:10px auto;
+			padding:10px;
+			transition:.5s ease-in-out;
+			width:70%;
+			@include mobile{
+				width:90%;
+			}
+			&:hover{
+				transform:scale(1.05);
+			}
+			.block-header{
+				a{
+					text-decoration:none;
+				}
+			}
+			.searchmatch{
+				font-weight:bold;
+			}
+			p{
+				
+			}
+			&:last-child{
+				margin-bottom:50px;
+			}
+		}
+	}
+}
