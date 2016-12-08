@@ -14,7 +14,7 @@ function getWiki(searchQuery){
 				$('#'+i+' h1').append("<a href='https://en.wikipedia.org/wiki/"+formatQuery(searchArray[i].title)+"'>"+searchArray[i].title+"</a>");
 				$('#'+i+' p').append(searchArray[i].snippet+'...');
 			}
-			$('.button-container').append("<button id='clear'>Clear Results</button>");
+			
 		},
 		error: function(errorMessage){
 			console.log('Error in request!');
@@ -29,6 +29,10 @@ $(document).ready(function(){
 	$('#search').on('click',function(){
 		query = $('input.search-box').val();
 		getWiki(formatQuery(query));
+		if ($('#clear').length === 0){
+			$('.button-container').append("<button id='clear'>Clear Results</button>");
+		}
+		
 	});
 
 	$(document).on('click','#clear',function(){
