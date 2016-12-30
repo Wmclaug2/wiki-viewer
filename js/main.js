@@ -26,6 +26,11 @@ function formatQuery(searchQuery){
 }
 
 $(document).ready(function(){
+	$('#search-box').keypress(function(e){
+      if(e.keyCode==13)
+      $('#search').click();
+    });
+    
 	$('#search').on('click',function(){
 		query = $('input.search-box').val();
 		getWiki(formatQuery(query));
