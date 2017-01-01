@@ -117,5 +117,19 @@ html .data .wiki-block .searchmatch {
   font-weight: bold;
 }
 html .data .wiki-block:last-child {
-  margin-bottom: 50px;
+  margin-bottom: 150px;
+}
+html .about-footer {
+  background-color: #AAA;
+  bottom: 0;
+  margin: 0 -10px;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+}
+html .about-footer p {
+  text-align: center;
+}
+html .about-footer a {
+  text-decoration: none;
 }

@@ -116,8 +116,22 @@ html{
 				
 			}
 			&:last-child{
-				margin-bottom:50px;
+				margin-bottom:150px;
 			}
+		}
+	}
+	.about-footer{
+		background-color:#AAA;
+		bottom:0;
+		margin: 0 -10px;
+		padding:10px;
+		position:fixed;
+		width:100%;
+		p{
+			text-align:center;
+		}
+		a{
+			text-decoration:none;
 		}
 	}
 }
